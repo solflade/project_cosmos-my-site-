@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Космический гид</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-rocket"></i>
+            <h1>Космический гид</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="contacts.html" class="active">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="margin-top: 0;">Контактная информация</h2>
+        <p style="margin-bottom: 30px;">Свяжитесь со мной по любым вопросам, связанным с астрономией, космосом и нашим проектом.</p>
+        
+        <div class="contacts-layout">
+            <div class="contacts-left">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <i class="fas fa-user-astronaut"></i>
+                        <h3>Разработчик сайта</h3>
+                    </div>
+                    <div class="info-card-content">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <strong>ФИО:</strong>
+                                <span>Билялов Равиль Рустемович</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong>
+                                <a href="mailto:ravilkabil@gmail.com">ravilkabil@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-telescope"></i>
+                            <div>
+                                <strong>Специализация:</strong>
+                                <span>Студент IT-колледжа, разработчик сайта</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Геопозиция:</strong>
+                                <span>Москва, Россия</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4><i class="fas fa-share-alt"></i> Социальные сети:</h4>
+                        <div class="social-icons">
+                            <a href="https://t.me/ow3rdoz" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="https://vk.com/ravilkab" class="social-icon vk"><i class="fab fa-vk"></i></a>
+                            <a href="https://github.com/solflade" class="social-icon github"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-block">
+                    <h3><i class="fas fa-question-circle"></i> Часто задаваемые вопросы</h3>
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-chevron-right"></i> Как быстро вы отвечаете на сообщения?</div>
+                        <div class="faq-answer">Обычно отвечаю в течение 24 часов в рабочие дни.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-chevron-right"></i> Могу ли я использовать ваши материалы?</div>
+                        <div class="faq-answer">Да, с обязательной ссылкой на источник и уведомлением автора.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-chevron-right"></i> Принимаете ли вы предложения по сотрудничеству?</div>
+                        <div class="faq-answer">Да, пишите на почту — рассмотрим все предложения.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts-right">
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> Написать сообщение</h3>
+                    <p class="form-note">Поля, отмеченные <span class="required-star">*</span>, обязательны для заполнения</p>
+                    
+                    <form action="#" method="POST" id="feedback-form">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Ваше имя <span class="required-star">*</span></label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Введите ваше имя" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email <span class="required-star">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="example@mail.ru" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject"><i class="fas fa-tag"></i> Тема сообщения</label>
+                            <select id="subject" name="subject" class="form-input">
+                                <option value="question">Вопрос по астрономии</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment"></i> Сообщение <span class="required-star">*</span></label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Напишите ваше сообщение..." rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent" name="consent" required class="checkbox-input">
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">Я согласен(на) на обработку персональных данных</span>
+                                <span class="required-star">*</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Отправить сообщение
+                        </button>
+
+                        <div class="form-success" id="form-success">
+                            <i class="fas fa-check-circle"></i> Сообщение успешно отправлено! Я свяжусь с вами в ближайшее время.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© Равиль, студент 1 курса, 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

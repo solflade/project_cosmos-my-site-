@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Космический гид</title>
+    
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ===== ШАПКА САЙТА ===== -->
+    <header>
+        <h1>Добро пожаловать в мир астрономии!</h1>
+        
+        <!-- Навигационное меню (ссылка на галерею) -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="gallery.html" class="active">Галерея</a></li>
+                <!-- заглушка -->
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== ОСНОВНОЕ СОДЕРЖИМОЕ ===== -->
+    <main>
+        <h2 style="margin-top: 0;">Космическая галерея</h2>
+        <p style="margin-bottom: 25px;">Коллекция удивительных изображений космоса, планет, галактик и туманностей.</p>
+        
+        <!-- Панель управления (счётчики и переключение вида) -->
+        <div class="controls-panel">
+            <div class="stats">
+                <span class="stat-item">
+                    <i class="fas fa-image"></i>
+                    Изображений: <span id="image-counter">0</span>
+                </span>
+                <span class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    Всего лайков: <span id="total-likes">0</span>
+                </span>
+            </div>
+        </div>
+
+        <!-- Фильтры по категориям -->
+        <div class="filters">
+            <h3><i class="fas fa-filter"></i> Фильтры:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="galaxy">Галактики</button>
+                <button class="filter-btn" data-filter="planet">Планеты</button>
+                <button class="filter-btn" data-filter="nebula">Туманности</button>
+            </div>
+        </div>
+
+        <!-- ГАЛЕРЕЯ С CSS GRID -->
+        <div class="gallery-grid" id="image-gallery">
+            
+            <!-- Карточка 1: Галактика Андромеды -->
+            <article class="image-card" data-category="galaxy">
+                <div class="card-image">
+                    <img src="images/ANDROMEDA.png" 
+                         alt="Галактика Андромеды - ближайшая крупная галактика к Млечному Пути"
+                         class="gallery-img"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="1">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Галактика Андромеды (M31)</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 15 марта 2024</p>
+                    <p class="image-description">Ближайшая крупная галактика к Млечному Пути. Находится на расстоянии 2,5 миллиона световых лет от Земли.</p>
+                    <div class="image-tags">
+                        <span class="tag">галактика</span>
+                        <span class="tag">андромеда</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 2: Сатурн -->
+            <article class="image-card" data-category="planet">
+                <div class="card-image">
+                    <img src="images/SATURN.png" 
+                         alt="Планета Сатурн с её знаменитыми кольцами"
+                         class="gallery-img"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Сатурн и его кольца</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 20 марта 2024</p>
+                    <p class="image-description">Шестая планета от Солнца, известная своей впечатляющей системой колец, состоящих из льда и пыли.</p>
+                    <div class="image-tags">
+                        <span class="tag">планета</span>
+                        <span class="tag">сатурн</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 3: Туманность Ориона -->
+            <article class="image-card" data-category="nebula">
+                <div class="card-image">
+                    <img src="images/ORION.png" 
+                         alt="Туманность Ориона - яркая эмиссионная туманность"
+                         class="gallery-img"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="3">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Туманность Ориона</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 5 апреля 2024</p>
+                    <p class="image-description">Яркая диффузная туманность в созвездии Ориона, видимая невооружённым глазом. Место рождения новых звёзд.</p>
+                    <div class="image-tags">
+                        <span class="tag">туманность</span>
+                        <span class="tag">орион</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 4: Марс -->
+            <article class="image-card" data-category="planet">
+                <div class="card-image">
+                    <img src="images/MARS.png" 
+                         alt="Красная планета Марс с вулканами и долинами"
+                         class="gallery-img"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="4">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Красная планета Марс</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 12 апреля 2024</p>
+                    <p class="image-description">Четвёртая планета от Солнца. Здесь находится самый высокий вулкан в Солнечной системе — Олимп (21 км).</p>
+                    <div class="image-tags">
+                        <span class="tag">планета</span>
+                        <span class="tag">марс</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 5: Галактика Водоворот -->
+            <article class="image-card" data-category="galaxy">
+                <div class="card-image">
+                    <img src="images/VODOVOROD.png" 
+                         alt="Галактика Водоворот (M51) с ярко выраженной спиральной структурой"
+                         class="gallery-img"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="5">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Галактика Водоворот (M51)</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 18 апреля 2024</p>
+                    <p class="image-description">Знаменитая спиральная галактика, взаимодействующая с соседней галактикой-компаньоном.</p>
+                    <div class="image-tags">
+                        <span class="tag">галактика</span>
+                        <span class="tag">водоворот</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Карточка 6: Туманность Кокон -->
+            <article class="image-card" data-category="nebula">
+                <div class="card-image">
+                    <img src="images/COCON.png" 
+                         alt="Туманность Кокон - область звездообразования"
+                         class="gallery-img"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="6">
+                            <i class="far fa-heart"></i>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button class="zoom-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Туманность Кокон (IC 5146)</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 25 апреля 2024</p>
+                    <p class="image-description">Область звездообразования в созвездии Лебедя, где новые звёзды рождаются из газа и пыли.</p>
+                    <div class="image-tags">
+                        <span class="tag">туманность</span>
+                        <span class="tag">звезды</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Интересный факт -->
+        <aside class="gallery-info">
+            <h3><i class="fas fa-lightbulb"></i> Интересный факт</h3>
+            <p>Свет от Солнца до Земли идёт 8 минут 20 секунд. Это значит, что если Солнце вдруг погаснет, мы узнаем об этом только через 8 минут!</p>
+        </aside>
+    </main>
+
+    <!-- ===== ПОДВАЛ САЙТА ===== -->
+    <footer>
+        <p>© Равиль, студент 1 курса, 2026</p>
+    </footer>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
